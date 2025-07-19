@@ -8,17 +8,17 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 
-export default function WalletPage() {
+export default function TransactionsPage() {
   return (
     <div className="p-4">
       <Card>
         <CardHeader>
-          <CardTitle>Wallet</CardTitle>
-          <CardDescription>View your wallet details.</CardDescription>
+          <CardTitle>Transactions</CardTitle>
+          <CardDescription>View and manage your transactions.</CardDescription>
         </CardHeader>
         <CardContent>
-          {/* Add wallet content here */}
-          <p>This is the wallet page.</p>
+          {/* Add transaction content here */}
+          <p>This is the transactions page.</p>
         </CardContent>
       </Card>
     </div>

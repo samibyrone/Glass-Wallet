@@ -35,7 +35,7 @@ const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Users", href: "/dashboard/users", icon: Users },
   { name: "Transactions", href: "/dashboard/transactions", icon: Activity },
-  { name: "Wallet Management", href: "/dashboard/wallets", icon: CreditCard },
+  { name: "Wallet Management", href: "/wallet", icon: CreditCard },
   { name: "Settings", href: "/dashboard/settings", icon: Settings },
   { name: "Help & Support", href: "/dashboard/support", icon: HelpCircle },
 ]
@@ -66,8 +66,8 @@ export default function DashboardLayout({
         >
           <div className="flex items-center justify-between h-16 px-6 border-b">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">G</span>
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">E</span>
               </div>
               <span className="text-xl font-bold text-slate-900">Glass Wallet</span>
             </div>

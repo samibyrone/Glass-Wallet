@@ -6,62 +6,55 @@ import { Shield, Zap, Globe, Users, ArrowRight, CheckCircle } from "lucide-react
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">G</span>
+      <header className="border-b bg-blue-700/80 backdrop-blur-sm sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between mb-5">
+          <div className="flex items-center space-x-2 mt-5">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">E</span>
             </div>
-            <span className="text-xl font-bold text-slate-900">Glass Wallet</span>
+            <span className="text-4xl font-bold text-slate-900">Glass Wallet</span>
           </div>
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#features" className="text-slate-600 hover:text-slate-900 transition-colors">
+          <nav className="hidden md:flex items-center space-x-8 gap-10 mt-5">
+            <Link href="#features" className="text-slate-600 text-2xl hover:text-slate-900 transition-colors font-semibold">
               Features
             </Link>
-            <Link href="#integration" className="text-slate-600 hover:text-slate-900 transition-colors">
+            <Link href="#integration" className="text-slate-600 text-2xl hover:text-slate-900 transition-colors font-semibold">
               Integration
             </Link>
-            <Link href="#security" className="text-slate-600 hover:text-slate-900 transition-colors">
+            <Link href="#security" className="text-slate-600 text-2xl hover:text-slate-900 transition-colors font-semibold">
               Security
             </Link>
           </nav>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center mt-5">
             <Link href="/auth/login">
-              <Button variant="ghost">Sign In</Button>
+              <Button variant="ghost" className="font-semibold text-xl">Sign In</Button>
             </Link>
-            <Link href="/auth/register">
-              <Button>Get Started</Button>
+            <Link href="/dashboard">
+              <Button className="font-semibold text-xl">Get Started</Button>
             </Link>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
       <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto text-center mt-30 mb-30">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
-              Enterprise Wallet
+              Enum Glass Wallet
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 {" "}
                 Infrastructure
               </span>
             </h1>
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+            <p className="text-xl text-slate-600 mb-8 leading-relaxed font-semibold">
               Seamlessly integrate crypto and fiat wallet functionality into your platform. Built for enterprises,
               designed for scale, secured by blockchain.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center font-semibold">
               <Link href="/auth/register">
-                <Button size="lg" className="px-8 py-3">
+                <Button size="lg" className="px-8 py-3 font-bold hover:text-black text-gray-400">
                   Start Integration
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/demo">
-                <Button variant="outline" size="lg" className="px-8 py-3 bg-transparent">
-                  View Demo
                 </Button>
               </Link>
             </div>
@@ -69,12 +62,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section id="features" className="py-20 px-4 bg-white">
-        <div className="container mx-auto">
+        <div className="container mx-auto mt-30 mb-30">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Complete Wallet Solution</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto font-semibold">
               Everything you need to integrate wallet functionality into your platform
             </p>
           </div>
@@ -131,18 +123,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Integration Flow */}
       <section id="integration" className="py-20 px-4 bg-slate-50">
-        <div className="container mx-auto">
+        <div className="container mx-auto mt-30 mb-30">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Simple Integration Process</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto font-semibold">
               Get your wallet infrastructure up and running in minutes
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div className="text-center bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white font-bold text-xl">1</span>
               </div>
@@ -150,7 +141,7 @@ export default function HomePage() {
               <p className="text-slate-600">Register your company and get unique API credentials for integration</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
               <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white font-bold text-xl">2</span>
               </div>
@@ -158,7 +149,7 @@ export default function HomePage() {
               <p className="text-slate-600">Seamlessly onboard your users with KYC verification and wallet creation</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl">
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-white font-bold text-xl">3</span>
               </div>
@@ -169,9 +160,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Security Section */}
       <section id="security" className="py-20 px-4 bg-white">
-        <div className="container mx-auto">
+        <div className="container mx-auto mt-30 mb-30">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Enterprise-Grade Security</h2>
@@ -224,15 +214,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto text-center mt-20 mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Platform?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Join leading companies who trust Glass Wallet for their financial infrastructure
           </p>
           <Link href="/auth/register">
-            <Button size="lg" variant="secondary" className="px-8 py-3">
+            <Button size="lg" variant="secondary" className="px-8 py-3 font-bold hover:text-black text-gray-700">
               Start Your Integration Today
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -240,14 +229,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-slate-900 text-white py-12 px-4">
-        <div className="container mx-auto">
+        <div className="container mx-auto mt-30">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">G</span>
+                  <span className="text-white font-bold text-sm">E</span>
                 </div>
                 <span className="text-xl font-bold">Glass Wallet</span>
               </div>
@@ -319,7 +307,7 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
-            <p>&copy; 2024 Glass Wallet. All rights reserved.</p>
+            <p>&copy; 2025 Glass Wallet. All rights reserved.</p>
           </div>
         </div>
       </footer>
