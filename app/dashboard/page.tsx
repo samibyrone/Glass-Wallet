@@ -1,26 +1,12 @@
 "use client"
 
-import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import {
-  Users,
-  DollarSign,
-  TrendingUp,
-  Activity,
-  Plus,
-  ArrowUpRight,
-  ArrowDownRight,
-  Eye,
-  Settings,
-  Bell,
-} from "lucide-react"
+import { Users, DollarSign, TrendingUp, Activity, Plus, ArrowUpRight, ArrowDownRight, Eye, Settings, Bell } from "lucide-react"
 import Link from "next/link"
 
 export default function DashboardPage() {
-  const [timeRange, setTimeRange] = useState("7d")
-
   const stats = [
     {
       title: "Total Users",

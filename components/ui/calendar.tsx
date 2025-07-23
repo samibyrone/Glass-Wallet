@@ -2,19 +2,13 @@
 
 import * as React from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { DayPicker } from "react-day-picker"
-
+import { DayPicker, CustomComponents } from "react-day-picker"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
-function Calendar({
-  className,
-  classNames,
-  showOutsideDays = true,
-  ...props
-}: CalendarProps) {
+function Calendar({ className, classNames, showOutsideDays = true, ...props}: CalendarProps) {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -53,10 +47,21 @@ function Calendar({
         day_hidden: "invisible",
         ...classNames,
       }}
-      components={{
-        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />,
-      }}
+      components={
+        {
+          Caption: ({ children }: { children: React.ReactNode }) => (
+            <div className="flex justify-center pt-1 relative items-center">
+              <div className="absolute left-1">
+                <ChevronLeft className="h-4 w-4" />
+              </div>
+              {children}
+              <div className="absolute right-1">
+                <ChevronRight className="h-4 w-4" />
+              </div>
+            </div>
+          ),
+        } as Partial<CustomComponents>
+      }
       {...props}
     />
   )
