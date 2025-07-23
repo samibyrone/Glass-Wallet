@@ -1,14 +1,14 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react"
+import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { Badge } from "@/components/ui/badge"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft, CreditCard, Building2, Wallet, Bitcoin, Copy, CheckCircle, AlertCircle, Info } from "lucide-react"
 
 export default function FundWalletPage() {
@@ -55,7 +55,7 @@ export default function FundWalletPage() {
             <Separator orientation="vertical" className="h-6" />
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">G</span>
+                <span className="text-white font-bold text-sm">E</span>
               </div>
               <span className="text-xl font-bold text-slate-900">Glass Wallet</span>
             </div>
@@ -65,7 +65,6 @@ export default function FundWalletPage() {
 
       <div className="container mx-auto px-6 py-8">
         <div className="max-w-2xl mx-auto">
-          {/* Progress Indicator */}
           <div className="mb-8">
             <div className="flex items-center justify-center space-x-4">
               <div className={`flex items-center space-x-2 ${step >= 1 ? "text-blue-600" : "text-slate-400"}`}>
@@ -112,7 +111,6 @@ export default function FundWalletPage() {
             <CardContent className="space-y-6">
               {step === 1 && (
                 <div className="space-y-6">
-                  {/* Currency Type Selection */}
                   <div className="space-y-4">
                     <Label className="text-base font-medium">Choose Currency Type</Label>
                     <RadioGroup

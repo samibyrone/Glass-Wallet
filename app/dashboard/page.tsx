@@ -1,10 +1,10 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Users, DollarSign, TrendingUp, Activity, Plus, ArrowUpRight, ArrowDownRight, Eye, Settings, Bell } from "lucide-react"
 import Link from "next/link"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Users, DollarSign, TrendingUp, Activity, Plus, ArrowUpRight, ArrowDownRight, Eye, Settings, Bell } from "lucide-react"
 
 export default function DashboardPage() {
   const stats = [
@@ -45,7 +45,7 @@ export default function DashboardPage() {
   const recentTransactions = [
     {
       id: "TXN001",
-      user: "john.doe@enum.com",
+      user: "john.daniel@enum.com",
       type: "Deposit",
       amount: "$500.00",
       currency: "USD",
@@ -54,7 +54,7 @@ export default function DashboardPage() {
     },
     {
       id: "TXN002",
-      user: "jane.smith@enum.com",
+      user: "samson.ibironke@enum.com",
       type: "Transfer",
       amount: "0.05 SUI",
       currency: "SUI",
@@ -63,7 +63,7 @@ export default function DashboardPage() {
     },
     {
       id: "TXN003",
-      user: "mike.wilson@enum.com",
+      user: "chidinma.nwangwu@enum.com",
       type: "Withdrawal",
       amount: "$1,200.00",
       currency: "USD",
@@ -72,35 +72,44 @@ export default function DashboardPage() {
     },
     {
       id: "TXN004",
-      user: "sarah.jones@enum.com",
+      user: "innah.emmanuel@enum.com",
       type: "Deposit",
       amount: "1.2 SUI",
       currency: "SUI",
       status: "completed",
       timestamp: "12 minutes ago",
     },
+    {
+      id: "TXN005",
+      user: "idowu.timothy@enum.com",
+      type: "Deposit",
+      amount: "3.2 SUI",
+      currency: "SUI",
+      status: "completed",
+      timestamp: "25 minutes ago",
+    },
   ]
 
   const activeUsers = [
     {
-      name: "John Doe",
-      email: "john.doe@enum.com",
+      name: "John Daniel",
+      email: "john.daniel@enum.com",
       balance: "$2,450.00",
       cryptoBalance: "5.2 SUI",
       status: "active",
       lastActivity: "2 minutes ago",
     },
     {
-      name: "Jane Smith",
-      email: "jane.smith@enum.com",
+      name: "Samson Ibironke",
+      email: "samson.ibironke@enum.com",
       balance: "$1,890.50",
       cryptoBalance: "3.8 SUI",
       status: "active",
       lastActivity: "5 minutes ago",
     },
     {
-      name: "Mike Wilson",
-      email: "mike.wilson@enum.com",
+      name: "Nwangwu Chidinma",
+      email: "nwangwu.chidinma@enum.com",
       balance: "$3,200.00",
       cryptoBalance: "8.1 SUI",
       status: "active",
@@ -109,22 +118,21 @@ export default function DashboardPage() {
   ]
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
+    <div className="space-y-8 ml-20 mr-20 mt-10 mb-20">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-slate-900">Dashboard</h1>
           <p className="text-slate-600 mt-1">Welcome back to Glass Wallet</p>
         </div>
         <div className="flex items-center space-x-4">
-          <Button variant="outline" size="icon">
+          <Button variant="outline" size="icon" className="hover:bg-blue-400">
             <Bell className="h-4 w-4" />
           </Button>
-          <Button variant="outline" size="icon">
+          <Button variant="outline" size="icon" className="hover:bg-blue-400">
             <Settings className="h-4 w-4" />
           </Button>
           <Link href="/dashboard/users/new">
-            <Button>
+            <Button className="hover:bg-green-400">
               <Plus className="h-4 w-4 mr-2" />
               Add User
             </Button>
@@ -132,7 +140,6 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, index) => (
           <Card key={index} className="hover:shadow-lg transition-shadow">
@@ -162,9 +169,7 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {/* Main Content */}
       <div className="grid lg:grid-cols-3 gap-8">
-        {/* Recent Activity */}
         <div className="lg:col-span-2">
           <Card>
             <CardHeader>
@@ -173,7 +178,7 @@ export default function DashboardPage() {
                   <CardTitle>Recent Transactions</CardTitle>
                   <CardDescription>Latest wallet activity from your users</CardDescription>
                 </div>
-                <Link href="/dashboard/transactions">
+                <Link href="/dashboard/transactions" className="hover:bg-green-300">
                   <Button variant="outline" size="sm">
                     View All
                   </Button>
@@ -226,7 +231,6 @@ export default function DashboardPage() {
           </Card>
         </div>
 
-        {/* Active Users */}
         <div>
           <Card>
             <CardHeader>
@@ -235,7 +239,7 @@ export default function DashboardPage() {
                   <CardTitle>Active Users</CardTitle>
                   <CardDescription>Users with recent activity</CardDescription>
                 </div>
-                <Link href="/dashboard/users">
+                <Link href="/dashboard/users" className="hover:bg-green-300">
                   <Button variant="outline" size="sm">
                     <Eye className="h-4 w-4 mr-1" />
                     View All
@@ -276,7 +280,6 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Quick Actions */}
       <Card>
         <CardHeader>
           <CardTitle>Quick Actions</CardTitle>
@@ -284,25 +287,25 @@ export default function DashboardPage() {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Link href="/dashboard/users/new">
+            <Link href="/dashboard/users/new" className="hover:bg-green-200">
               <Button variant="outline" className="h-20 flex-col space-y-2 w-full bg-transparent">
                 <Users className="h-6 w-6" />
                 <span>Add User</span>
               </Button>
             </Link>
-            <Link href="/dashboard/transactions">
+            <Link href="/dashboard/transactions" className="hover:bg-amber-200">
               <Button variant="outline" className="h-20 flex-col space-y-2 w-full bg-transparent">
                 <Activity className="h-6 w-6" />
                 <span>View Transactions</span>
               </Button>
             </Link>
-            <Link href="/dashboard/settings">
+            <Link href="/dashboard/settings" className="hover:bg-neutral-400">
               <Button variant="outline" className="h-20 flex-col space-y-2 w-full bg-transparent">
                 <Settings className="h-6 w-6" />
                 <span>Settings</span>
               </Button>
             </Link>
-            <Link href="/dashboard/reports">
+            <Link href="/dashboard/reports" className="hover:bg-amber-400">
               <Button variant="outline" className="h-20 flex-col space-y-2 w-full bg-transparent">
                 <TrendingUp className="h-6 w-6" />
                 <span>Reports</span>
