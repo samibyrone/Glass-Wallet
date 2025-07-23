@@ -15,22 +15,22 @@ export default function HomePage() {
             <span className="text-4xl font-bold text-slate-900">Glass Wallet</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8 gap-10 mt-5">
-            <Link href="#features" className="text-slate-600 text-2xl hover:text-slate-900 transition-colors font-semibold">
+            <Link href="#features" className="text-slate-600 text-xl hover:text-slate-900 transition-colors font-semibold">
               Features
             </Link>
-            <Link href="#integration" className="text-slate-600 text-2xl hover:text-slate-900 transition-colors font-semibold">
+            <Link href="#integration" className="text-slate-600 text-xl hover:text-slate-900 transition-colors font-semibold">
               Integration
             </Link>
-            <Link href="#security" className="text-slate-600 text-2xl hover:text-slate-900 transition-colors font-semibold">
+            <Link href="#security" className="text-slate-600 text-xl hover:text-slate-900 transition-colors font-semibold">
               Security
             </Link>
           </nav>
           <div className="flex items-center mt-5">
             <Link href="/auth/login">
-              <Button variant="ghost" className="font-semibold text-xl">Sign In</Button>
+              <Button variant="ghost" className="font-semibold text-lg">Sign In</Button>
             </Link>
             <Link href="/dashboard">
-              <Button className="font-semibold text-xl">Get Started</Button>
+              <Button className="font-semibold text-lg text-gray-400 bg-black hover:text-white">Get Started</Button>
             </Link>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center font-semibold">
               <Link href="/auth/register">
-                <Button size="lg" className="px-8 py-3 font-bold hover:text-black text-gray-400">
+                <Button size="lg" className="px-8 py-3 font-bold hover:text-white text-gray-400 bg-black">
                   Start Integration
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -221,7 +221,7 @@ export default function HomePage() {
             Join leading companies who trust Glass Wallet for their financial infrastructure
           </p>
           <Link href="/auth/register">
-            <Button size="lg" variant="secondary" className="px-8 py-3 font-bold hover:text-black text-gray-700">
+            <Button size="lg" variant="secondary" className="px-8 py-3 font-bold hover:text-black text-gray-700 bg-white">
               Start Your Integration Today
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

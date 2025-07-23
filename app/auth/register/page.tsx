@@ -48,10 +48,10 @@ export default function RegisterPage() {
     }));
   };
 
-  const handleSelectChange = (id: string, value: string) => {
+  const handleSelectChange = (name: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
-      [id]: value
+      [name]: value
     }));
   };
 
@@ -246,7 +246,6 @@ export default function RegisterPage() {
                         handleSelectChange("industry", value)
                       }
                       value={formData.industry}
-                      id="industry"
                     >
                       <SelectTrigger>
                         <SelectValue placeholder='Select industry' />
@@ -268,7 +267,6 @@ export default function RegisterPage() {
                       handleSelectChange("country", value)
                     }
                     value={formData.country}
-                    id="country"
                   >
                     <SelectTrigger>
                       <SelectValue placeholder='Select country' />
