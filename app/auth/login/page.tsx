@@ -1,15 +1,15 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Eye, EyeOff, ArrowLeft } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { Button } from "@/components/ui/button"
 import { useToast } from "@/components/ui/use-toast"
+import { Eye, EyeOff, ArrowLeft } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
@@ -35,28 +35,38 @@ export default function LoginPage() {
     e.preventDefault()
     setLoading(true)
     try {
-      const response = await fetch("/api/auth/login", {
+      const response = await fetch("https://glass-wallet.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
-      })
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
 
-      const data = await response.json()
+      const data = await response.json();
 
       if (response.ok) {
+        console.log("Login successful:", data);
         toast({
           title: "Login Successful",
-          description: data.message,
-        })
-        router.push("/dashboard") // Redirect to dashboard on successful login
+          description: data.message || "You have been successfully logged in.",
+        });
+        if (data.token) {
+          localStorage.setItem("authToken", data.token);
+        }
+        if (data.userId) {
+          localStorage.setItem("userId", data.userId);
+        }
+        router.push("/dashboard");
       } else {
         toast({
           title: "Login Failed",
-          description: data.message || "Something went wrong.",
+          description: data.message || "Invalid credentials. Please try again.",
           variant: "destructive",
-        })
+        });
       }
     } catch (error) {
       console.error("Login error:", error)

@@ -38,7 +38,7 @@ export async function POST(req: Request) {
     if (error instanceof Error) {
       errorMessage = error.message;
     }
-    console.error("Registration error:", error); // Add this line for detailed error logging
+    console.error("Registration error:", error);
     return NextResponse.json({ message: errorMessage }, { status: 500 });
   }
 }
