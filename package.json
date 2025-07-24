@@ -48,6 +48,7 @@
     "radix": "^0.0.0",
     "react": "^19.1.0",
     "react-avatar": "^5.0.4",
+    "react-day-picker": "^9.8.0",
     "react-dom": "^19.1.0",
     "react-dropdown-menu": "^0.0.2",
     "react-hook-form": "^7.60.0",
