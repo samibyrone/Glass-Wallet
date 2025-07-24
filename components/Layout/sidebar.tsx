@@ -1,12 +1,10 @@
 'use client';
 
 import * as React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { LogOut, UserCircle, ChevronDown, Loader2, Menu, X } from 'lucide-react';
 import { useUser } from '../../hooks/use-user';
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { MainSidebarNavigation } from './MainSidebarNavigation';
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import { LogOut, UserCircle, ChevronDown, Loader2, Menu, X } from 'lucide-react';
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -20,7 +18,7 @@ export function AppShell({ children }: AppShellProps) {
     setMounted(true);
   }, []);
 
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false); // State for mobile sidebar
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false); 
 
   if (loading || !mounted) {
     return (
@@ -32,7 +30,6 @@ export function AppShell({ children }: AppShellProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Mobile Header */}
       <header className="md:hidden flex items-center justify-between px-4 py-3 border-b bg-card">
         <div className="flex items-center gap-2">
           <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary">
@@ -45,7 +42,6 @@ export function AppShell({ children }: AppShellProps) {
         </button>
       </header>
 
-      {/* Sidebar */}
       <aside 
         className={`bg-gradient-to-br from-purple-400 to-blue-900 fixed left-0 top-0 z-50 h-full w-64 border-r bg-card transform ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
@@ -53,7 +49,6 @@ export function AppShell({ children }: AppShellProps) {
         md:translate-x-0 md:flex md:flex-col`}
       >
         <div className="flex-shrink-0">
-          {/* Logo */}
           <div className="flex items-center gap-2 px-6 py-4 border-b">
            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">E</span>
@@ -65,10 +60,8 @@ export function AppShell({ children }: AppShellProps) {
           </div>
         </div>
 
-        {/* Navigation */}
         <MainSidebarNavigation setIsSidebarOpen={setIsSidebarOpen} />
 
-        {/* User Profile */}
         <div className="flex-shrink-0 p-4 border-t bg-card">
           <Popover>
             <PopoverTrigger asChild>
@@ -84,12 +77,9 @@ export function AppShell({ children }: AppShellProps) {
               </button>
             </PopoverTrigger>
             <PopoverContent className="w-56 p-1" align="end">
-              {/* <div className="px-3 py-2 text-xs text-muted-foreground">
-                <p>Current Plan</p>
-              </div> */}
               <button 
                 type="button"
-                onClick={() => { logout(); setIsSidebarOpen(false); }} // Close sidebar on logout
+                onClick={() => { logout(); setIsSidebarOpen(false); }} 
                 className="bg-black text-white font-semibold w-full flex items-center px-3 py-2 text-bg rounded-md text-destructive hover:bg-accent transition-colors"
               >
                 <LogOut className="w-4 h-4 text-red-500 mr-2" />
@@ -100,7 +90,6 @@ export function AppShell({ children }: AppShellProps) {
         </div>
       </aside>
 
-      {/* Overlay for mobile sidebar */}
       {isSidebarOpen && (
         <div 
           className="fixed inset-0 bg-black/50 z-40 md:hidden" 
@@ -108,7 +97,6 @@ export function AppShell({ children }: AppShellProps) {
         />
       )}
 
-      {/* Main Content */}
       <main className="md:pl-64">
         {children}
       </main>

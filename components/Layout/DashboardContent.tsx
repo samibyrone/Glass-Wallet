@@ -3,8 +3,8 @@
 import type React from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Bell, Search, Settings, HelpCircle, LogOut } from "lucide-react"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 interface DashboardContentProps {
@@ -14,7 +14,6 @@ interface DashboardContentProps {
 export function DashboardContent({ children }: DashboardContentProps) {
   return (
     <>
-      {/* Top navigation */}
       <header className="bg-white shadow-sm border-b sticky top-0 z-30 mt-4">
         <div className="flex items-center justify-between h-16 px-6 ml-20 mr-20">
           <div className="flex items-center space-x-4">
@@ -71,7 +70,6 @@ export function DashboardContent({ children }: DashboardContentProps) {
         </div>
       </header>
 
-      {/* Page content */}
       <main className="p-2">{children}</main>
     </>
   )

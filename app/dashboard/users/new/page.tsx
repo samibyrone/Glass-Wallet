@@ -2,22 +2,15 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export default function NewUserPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    // Add other fields as needed
   });
   const router = useRouter();
 
@@ -31,11 +24,8 @@ export default function NewUserPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement user creation logic here
     console.log('Creating user with data:', formData);
-    // You'll likely want to make an API call to create the user
-    // and handle the response (success/failure)
-    router.push('/dashboard/users'); // Redirect to user list after creation
+    router.push('/dashboard/users');
   };
 
   return (
@@ -67,7 +57,6 @@ export default function NewUserPage() {
                 onChange={handleChange}
               />
             </div>
-            {/* Add more form fields here */}
             <Button type="submit">Create User</Button>
           </form>
         </CardContent>

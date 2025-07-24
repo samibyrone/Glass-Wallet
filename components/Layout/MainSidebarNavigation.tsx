@@ -34,7 +34,7 @@ export function MainSidebarNavigation({ setIsSidebarOpen }: MainSidebarNavigatio
                 ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700' 
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
             }`}
-            onClick={() => setIsSidebarOpen(false)} // Close sidebar on navigation
+            onClick={() => setIsSidebarOpen(false)}
           >
             <item.icon className={`mr-3 h-5 w-5 ${isActive ? "text-blue-700" : "text-slate-400"}`} />
             {item.name}
