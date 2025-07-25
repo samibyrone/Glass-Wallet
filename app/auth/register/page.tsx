@@ -56,7 +56,6 @@ export default function RegisterPage() {
   };
 
   const nextStep = () => {
-    // Basic validation for current step before proceeding
     if (step === 1) {
       if (!formData.companyName || !formData.industry || !formData.country) {
         toast({
@@ -197,7 +196,6 @@ export default function RegisterPage() {
           </CardHeader>
 
           <CardContent className='space-y-6'>
-            {/* Progress Bar */}
             <div className='flex items-center space-x-2 mb-6'>
               {[1, 2, 3].map((i) => (
                 <div key={i} className='flex items-center'>
@@ -376,36 +374,11 @@ export default function RegisterPage() {
                     onChange={handleChange}
                   />
                 </div>
-
-                {/* <div className="space-y-2">
-                  <Label htmlFor="expectedVolume">Expected Monthly Transaction Volume</Label>
-                  <Select onValueChange={(value) => handleSelectChange("expectedVolume", value)} value={formData.expectedVolume}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select volume range" />
-                    </SelectTrigger>
-                    <SelectContent className="text-black bg-white">
-                      <SelectItem value="0-10k">$0 - $10,000</SelectItem>
-                      <SelectItem value="10k-100k">$10,000 - $100,000</SelectItem>
-                      <SelectItem value="100k-1m">$100,000 - $1,000,000</SelectItem>
-                      <SelectItem value="1m+">$1,000,000+</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div> */}
               </div>
             )}
 
             {step === 3 && (
               <div className='space-y-4'>
-                <div className='space-y-2'>
-                  <Label htmlFor='username'>Username *</Label>
-                  <Input
-                    id='username'
-                    placeholder='Choose a username'
-                    required
-                    value={formData.username}
-                    onChange={handleChange}
-                  />
-                </div>
                 <div className='space-y-2'>
                   <Label htmlFor='password'>Password *</Label>
                   <div className='relative'>

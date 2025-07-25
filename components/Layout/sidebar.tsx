@@ -35,7 +35,7 @@ export function AppShell({ children }: AppShellProps) {
           <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary">
             <span className="text-white font-bold text-sm">E</span>
           </div>
-          <span className="text-xl font-bold text-slate-900">Glass Wallet</span>
+          <span className="text-xl font-bold text-white hover:text-black">Glass Wallet</span>
         </div>
         <button type="button" onClick={() => setIsSidebarOpen(true)} className="p-2 rounded-md hover:bg-accent" aria-label="Open sidebar">
           <Menu className="w-6 h-6" />
@@ -53,7 +53,7 @@ export function AppShell({ children }: AppShellProps) {
            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">E</span>
             </div>
-            <span className="text-xl font-bold text-slate-900">Glass Wallet</span>
+            <span className="text-xl font-bold text-white">Glass Wallet</span>
             <button type="button" onClick={() => setIsSidebarOpen(false)} className="md:hidden ml-auto p-2 rounded-md hover:bg-accent" aria-label="Close sidebar">
               <X className="w-6 h-6" />
             </button>
