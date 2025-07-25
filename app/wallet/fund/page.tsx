@@ -9,24 +9,8 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { Separator } from "@/components/ui/separator";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card";
-import {
-  ArrowLeft,
-  CreditCard,
-  Building2,
-  Wallet,
-  Bitcoin,
-  Copy,
-  CheckCircle,
-  AlertCircle,
-  Info
-} from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, CreditCard, Building2, Wallet, Bitcoin, Copy, CheckCircle, AlertCircle, Info } from "lucide-react";
 
 export default function FundWalletPage() {
   const [currencyType, setCurrencyType] = useState<"fiat" | "crypto">("fiat");
@@ -249,7 +233,7 @@ export default function FundWalletPage() {
               {step === 1 && (
                 <div className='space-y-6'>
                   <div className='space-y-4'>
-                    <Label className='text-base font-medium'>
+                    <Label className='text-base font-semibold'>
                       Choose Currency Type
                     </Label>
                     <RadioGroup
@@ -267,10 +251,10 @@ export default function FundWalletPage() {
                           />
                           <Label
                             htmlFor='fiat'
-                            className='flex flex-col items-center justify-center rounded-lg border-2 border-muted bg-popover p-6 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer'
+                            className='flex flex-col items-center justify-center rounded-lg border-2 border-muted bg-popover p-6 hover:bg-blue-200 hover:font-semibold peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer'
                           >
-                            <Building2 className='mb-3 h-8 w-8' />
-                            <span className='font-medium'>Fiat Currency</span>
+                            <Building2 className='mb-3 h-10 w-10 ' />
+                            <span className='font-semibold text-xl'>Fiat Currency</span>
                             <span className='text-sm text-muted-foreground'>
                               USD, EUR, NGN, GBP etc.
                             </span>
@@ -284,10 +268,10 @@ export default function FundWalletPage() {
                           />
                           <Label
                             htmlFor='crypto'
-                            className='flex flex-col items-center justify-center rounded-lg border-2 border-muted bg-popover p-6 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer'
+                            className='flex flex-col items-center justify-center rounded-lg border-2 border-muted bg-popover p-6 hover:bg-blue-200 hover:font-semibold peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer'
                           >
-                            <Bitcoin className='mb-3 h-8 w-8' />
-                            <span className='font-medium'>Cryptocurrency</span>
+                            <Bitcoin className='mb-3 h-10 w-10' />
+                            <span className='font-semibold text-xl'>Cryptocurrency</span>
                             <span className='text-sm text-muted-foreground'>
                               SUI, BTC, ETH
                             </span>
@@ -299,7 +283,7 @@ export default function FundWalletPage() {
 
                   {currencyType === "fiat" && (
                     <div className='space-y-4'>
-                      <Label className='text-base font-medium'>
+                      <Label className='text-base font-semibold'>
                         Choose Funding Method
                       </Label>
                       <RadioGroup
@@ -317,11 +301,11 @@ export default function FundWalletPage() {
                             />
                             <Label
                               htmlFor='card'
-                              className='flex flex-col items-center justify-center rounded-lg border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer'
+                              className='flex flex-col items-center justify-center rounded-lg border-2 border-muted bg-popover p-4 hover:bg-green-200 hover:font-semibold peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer'
                             >
-                              <CreditCard className='h-6 w-6' />
+                              <CreditCard className='h-8 w-8 mb-5'/>
                               <div>
-                                <span className='font-medium'>
+                                <span className='font-semibold ml-10'>
                                   Credit/Debit Card
                                 </span>
                                 <p className='text-sm text-muted-foreground'>
@@ -338,11 +322,11 @@ export default function FundWalletPage() {
                             />
                             <Label
                               htmlFor='transfer'
-                              className='flex flex-col items-center justify-center rounded-lg border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer'
+                              className='flex flex-col items-center justify-center rounded-lg border-2 border-muted bg-popover p-4 hover:bg-green-200 hover:font-semibold peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary cursor-pointer'
                             >
-                              <Building2 className='h-6 w-6' />
+                              <Building2 className='h-8 w-8 mb-5'/>
                               <div>
-                                <span className='font-medium'>
+                                <span className='font-semibold ml-15'>
                                   Bank Transfer
                                 </span>
                                 <p className='text-sm text-muted-foreground'>
