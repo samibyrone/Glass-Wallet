@@ -12,25 +12,25 @@ export default function HomePage() {
             <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">E</span>
             </div>
-            <span className="text-4xl font-bold text-slate-900">Glass Wallet</span>
+            <span className="text-4xl font-bold text-white">Glass Wallet</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8 gap-10 mt-5">
-            <Link href="#features" className="text-slate-600 text-xl hover:text-slate-900 transition-colors font-semibold">
+            <Link href="#features" className="text-white text-xl hover:text-slate-400 transition-colors font-semibold">
               Features
             </Link>
-            <Link href="#integration" className="text-slate-600 text-xl hover:text-slate-900 transition-colors font-semibold">
+            <Link href="#integration" className="text-white text-xl hover:text-slate-400 transition-colors font-semibold">
               Integration
             </Link>
-            <Link href="#security" className="text-slate-600 text-xl hover:text-slate-900 transition-colors font-semibold">
+            <Link href="#security" className="text-white text-xl hover:text-slate-400 transition-colors font-semibold">
               Security
             </Link>
           </nav>
           <div className="flex items-center mt-5">
             <Link href="/auth/login">
-              <Button variant="ghost" className="font-semibold text-lg">Sign In</Button>
+              <Button variant="ghost" className="text-white hover:text-slate-400 transition-colors font-semibold text-lg">Sign In</Button>
             </Link>
             <Link href="/dashboard">
-              <Button className="font-semibold text-lg text-gray-400 bg-black hover:text-white">Get Started</Button>
+              <Button className="font-semibold text-lg text-white bg-black hover:text-slate-400">Get Started</Button>
             </Link>
           </div>
         </div>
@@ -221,7 +221,7 @@ export default function HomePage() {
             Join leading companies who trust Glass Wallet for their financial infrastructure
           </p>
           <Link href="/auth/register">
-            <Button size="lg" variant="secondary" className="px-8 py-3 font-bold hover:text-black text-gray-700 bg-white">
+            <Button size="lg" variant="secondary" className="px-8 py-3 font-bold hover:text-white text-gray-600 bg-black">
               Start Your Integration Today
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -230,8 +230,8 @@ export default function HomePage() {
       </section>
 
       <footer className="bg-slate-900 text-white py-12 px-4">
-        <div className="container mx-auto mt-30">
-          <div className="grid md:grid-cols-4 gap-8">
+        <div className="container mx-auto mt-10">
+          <div className="grid md:grid-cols-4 gap-8 ml-20">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
@@ -306,7 +306,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
+          <div className="border-t border-slate-800 mt-5 pt-8 text-center text-slate-400">
             <p>&copy; 2025 Glass Wallet. All rights reserved.</p>
           </div>
         </div>
