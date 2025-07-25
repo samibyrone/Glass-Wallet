@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { AppShell } from '@/components/Layout/sidebar';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export default function NewUserPage() {
@@ -29,7 +30,9 @@ export default function NewUserPage() {
   };
 
   return (
-    <div className="p-4">
+    <AppShell>
+
+    <div className="p-4 m-20">
       <Card>
         <CardHeader>
           <CardTitle>Create New User</CardTitle>
@@ -45,7 +48,7 @@ export default function NewUserPage() {
                 placeholder="John Doe"
                 value={formData.name}
                 onChange={handleChange}
-              />
+                />
             </div>
             <div>
               <Label htmlFor="email">Email</Label>
@@ -55,12 +58,13 @@ export default function NewUserPage() {
                 placeholder="john.doe@example.com"
                 value={formData.email}
                 onChange={handleChange}
-              />
+                />
             </div>
-            <Button type="submit">Create User</Button>
+            <Button type="submit" className='bg-green-300 text-black'>Create User</Button>
           </form>
         </CardContent>
       </Card>
     </div>
+    </AppShell>
   );
 }
