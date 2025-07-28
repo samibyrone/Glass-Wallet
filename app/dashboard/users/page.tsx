@@ -8,41 +8,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AppShell } from "@/components/Layout/sidebar";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow
-} from "@/components/ui/table";
-import {
-  Search,
-  Filter,
-  Plus,
-  MoreHorizontal,
-  Eye,
-  Edit,
-  Trash2,
-  Download,
-  UserCheck,
-  UserX
-} from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Search, Filter, Plus, MoreHorizontal, Eye, Edit, Trash2, Download, UserCheck, UserX } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 export default function UsersPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -97,7 +66,7 @@ export default function UsersPage() {
             </p>
           </div>
           <div className='flex items-center space-x-4'>
-            <Button variant='outline' className='hover:bg-blue-400'>
+            <Button className='hover:bg-blue-400'>
               <Download className='h-4 w-4 mr-2' />
               Export
             </Button>
@@ -110,8 +79,8 @@ export default function UsersPage() {
           </div>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-4 gap-6'>
-          <Card>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-6 mb-10 mt-20'>
+          <Card className="border-none">
             <CardContent className='p-6'>
               <div className='flex items-center justify-between'>
                 <div>
@@ -127,7 +96,7 @@ export default function UsersPage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="border-none">
             <CardContent className='p-6'>
               <div className='flex items-center justify-between'>
                 <div>
@@ -143,7 +112,7 @@ export default function UsersPage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="border-none">
             <CardContent className='p-6'>
               <div className='flex items-center justify-between'>
                 <div>
@@ -159,7 +128,7 @@ export default function UsersPage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="border-none">
             <CardContent className='p-6'>
               <div className='flex items-center justify-between'>
                 <div>
@@ -176,8 +145,8 @@ export default function UsersPage() {
           </Card>
         </div>
 
-        <Card>
-          <CardHeader>
+        <Card className="border-none">
+          <CardHeader className="mb-5">
             <CardTitle>Users</CardTitle>
             <CardDescription>
               A list of all users in your system
@@ -185,24 +154,24 @@ export default function UsersPage() {
           </CardHeader>
           <CardContent>
             <div className='flex items-center justify-between mb-6'>
-              <div className='flex items-center space-x-4'>
+              <div className='flex items-center space-x-4 border-none'>
                 <div className='relative'>
                   <Search className='absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400' />
                   <Input
                     placeholder='Search users...'
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className='pl-10 w-80'
+                    className='pl-10 w-80 border-none'
                   />
                 </div>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild className='hover:bg-blue-400'>
-                    <Button variant='outline'>
+                    <Button>
                       <Filter className='h-4 w-4 mr-2' />
                       Status: {statusFilter === "all" ? "All" : statusFilter}
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className='bg-gradient-to-br from-blue-300 to-purple-300 font-semibold'>
+                  <DropdownMenuContent className='border-none bg-gradient-to-br from-blue-300 to-purple-300 font-semibold'>
                     <DropdownMenuItem
                       onClick={() => setStatusFilter("all")}
                       className='hover:text-white'
@@ -235,10 +204,10 @@ export default function UsersPage() {
               </div>
             </div>
 
-            <div className='rounded-md border'>
+            <div className='rounded-md'>
               <Table>
                 <TableHeader>
-                  <TableRow>
+                  <TableRow className="border-none">
                     <TableHead>User</TableHead>
                     <TableHead>Unique ID</TableHead>
                     <TableHead>Status</TableHead>
@@ -251,9 +220,9 @@ export default function UsersPage() {
                 </TableHeader>
                 <TableBody>
                   {filteredUsers.map((user) => (
-                    <TableRow key={user.id}>
+                    <TableRow key={user.id} className="border-none">
                       <TableCell>
-                        <div className='flex items-center space-x-3 '>
+                        <div className='flex items-center space-x-5'>
                           <Avatar>
                             <div className='w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center'>
                               <AvatarFallback>

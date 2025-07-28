@@ -10,24 +10,8 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { Separator } from "@/components/ui/separator";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from "@/components/ui/card";
-import {
-  ArrowLeft,
-  CreditCard,
-  Building2,
-  Wallet,
-  Bitcoin,
-  Copy,
-  CheckCircle,
-  AlertCircle,
-  Info
-} from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, CreditCard, Building2, Wallet, Bitcoin, Copy, CheckCircle, AlertCircle, Info } from "lucide-react";
 
 interface BankDetails {
   accountName: string;

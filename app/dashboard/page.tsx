@@ -18,10 +18,10 @@ export default function DashboardPage() {
             <p className="text-slate-600 mt-1">Welcome back to Glass Wallet</p>
           </div>
         <div className="flex items-center space-x-4">
-          <Button variant="outline" size="icon" className="hover:bg-blue-400">
+          <Button size="icon" className="hover:bg-blue-400">
             <Bell className="h-4 w-4" />
           </Button>
-          <Button variant="outline" size="icon" className="hover:bg-blue-400">
+          <Button size="icon" className="hover:bg-blue-400">
             <Settings className="h-4 w-4" />
           </Button>
           <Link href="/dashboard/users/new">
@@ -33,9 +33,9 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20 mb-10">
         {stats.map((stat, index) => (
-          <Card key={index} className="hover:shadow-lg transition-shadow">
+          <Card key={index} className="hover:shadow-lg transition-shadow border-none">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -63,16 +63,17 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <Card>
+        <div>
+          <Card className="border-none">
             <CardHeader>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between border-none">
                 <div>
                   <CardTitle>Recent Transactions</CardTitle>
                   <CardDescription>Latest wallet activity from your users</CardDescription>
                 </div>
                 <Link href="/dashboard/transactions" className="hover:bg-green-300">
                   <Button variant="outline" size="sm">
+                    <Eye className="h-4 w-4 mr-1" />
                     View All
                   </Button>
                 </Link>
@@ -83,7 +84,7 @@ export default function DashboardPage() {
                 {recentTransactions.map((transaction) => (
                   <div
                     key={transaction.id}
-                    className="flex items-center justify-between p-4 border rounded-lg hover:bg-slate-50 transition-colors"
+                    className="flex items-center justify-between p-4 hover:bg-slate-50 transition-colors"
                   >
                     <div className="flex items-center space-x-4">
                       <div
@@ -125,7 +126,7 @@ export default function DashboardPage() {
         </div>
 
         <div>
-          <Card>
+          <Card className="border-none">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div>
@@ -145,7 +146,7 @@ export default function DashboardPage() {
                 {activeUsers.map((user, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between p-3 border rounded-lg hover:bg-slate-50 transition-colors"
+                    className="flex items-center justify-between p-3 hover:bg-slate-50 transition-colors"
                   >
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
@@ -173,33 +174,33 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <Card>
-        <CardHeader>
+      <Card className="border-none">
+        <CardHeader className="mt-20 mb-10">
           <CardTitle>Quick Actions</CardTitle>
           <CardDescription>Common tasks and shortcuts</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Link href="/dashboard/users/new" className="hover:bg-green-200">
-              <Button variant="outline" className="h-20 flex-col space-y-2 w-full bg-transparent">
+            <Link href="/dashboard/users/new" className="hover:bg-green-200 rounded-full">
+              <Button className="h-20 flex-col space-y-2 w-full bg-transparent">
                 <Users className="h-6 w-6" />
                 <span>Add User</span>
               </Button>
             </Link>
-            <Link href="/dashboard/transactions" className="hover:bg-amber-200">
-              <Button variant="outline" className="h-20 flex-col space-y-2 w-full bg-transparent">
+            <Link href="/dashboard/transactions" className="hover:bg-amber-200 rounded-full">
+              <Button className="h-20 flex-col space-y-2 w-full bg-transparent">
                 <Activity className="h-6 w-6" />
                 <span>View Transactions</span>
               </Button>
             </Link>
-            <Link href="/dashboard/settings" className="hover:bg-neutral-400">
-              <Button variant="outline" className="h-20 flex-col space-y-2 w-full bg-transparent">
+            <Link href="/dashboard/settings" className="hover:bg-neutral-400 rounded-full">
+              <Button className="h-20 flex-col space-y-2 w-full bg-transparent">
                 <Settings className="h-6 w-6" />
                 <span>Settings</span>
               </Button>
             </Link>
-            <Link href="/dashboard/reports" className="hover:bg-amber-400">
-              <Button variant="outline" className="h-20 flex-col space-y-2 w-full bg-transparent">
+            <Link href="/dashboard/reports" className="hover:bg-amber-400 rounded-full">
+              <Button className="h-20 flex-col space-y-2 w-full bg-transparent">
                 <TrendingUp className="h-6 w-6" />
                 <span>Reports</span>
               </Button>
