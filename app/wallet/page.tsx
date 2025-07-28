@@ -149,34 +149,41 @@ export default function WalletPage() {
 
   return (
     <AppShell>
-      <div className="container mx-auto p-4 m-20">
-        <h1 className="text-3xl font-bold mb-20">Your Wallet</h1>
-        <div className="bg-white shadow-md rounded-lg p-6 mb-6">
+      <div className="container mx-auto p-4 mt-10 mb-20">
+        <div>
+          <h1 className="text-3xl font-bold">
+            Your Wallet
+          </h1>
+          <p className='text-slate-600 mt-1 text-bg'>
+            Manage your platform users and their transactions
+          </p>
+        </div>
+        <div className="bg-white shadow-md rounded-lg p-6 mt-20">
           <div className="flex justify-between items-center">
-            <h2 className="text-xl font-semibold mb-20">Current Balance</h2>
+            <h2 className="text-xl font-semibold mb-10">Current Balance</h2>
             {loading
               ? <p>Loading...</p>
-              : <p className="text-2xl font-bold">
+              : <p className="text-2xl font-bold mb-10">
                   ${balance.toFixed(2)}
                 </p>}
           </div>
           <Separator className="my-4" />
           <div className="flex space-x-4">
-            <Button onClick={handleFundWallet} className="flex-1" variant="outline">
+            <Button onClick={handleFundWallet} className="flex-1 hover:bg-green-200 shadow-md rounded-full font-semibold">
               Fund Wallet
             </Button>
-            <Button onClick={handleWithdraw} variant="outline" className="flex-1">
+            <Button onClick={handleWithdraw} className="flex-1 hover:bg-red-200 shadow-md rounded-full font-semibold">
               Withdraw
             </Button>
-            <Button onClick={handleWithdrawFiat} className="flex-1" variant="outline">
+            <Button onClick={handleWithdrawFiat} className="flex-1 hover:bg-pink-200 shadow-md rounded-full font-semibold">
               Withdraw Fiat
             </Button>
-            <Button onClick={handleWithdrawSui} className="flex-1" variant="outline">
+            <Button onClick={handleWithdrawSui} className="flex-1 hover:bg-emerald-200 shadow-md rounded-full font-semibold">
               Withdraw SUI
             </Button>
           </div>
         </div>
-        <div className="bg-white shadow-md rounded-lg p-6">
+        <div className="bg-white shadow-md rounded-lg p-6 mt-30">
           <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
           <p>Transaction history will be displayed here.</p>
         </div>
